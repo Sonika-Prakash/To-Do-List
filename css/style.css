@@ -1,0 +1,240 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 20px;
+	margin: 0;
+	background-color: #f2f3f4;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.top {
+	width: 100%;
+	background-color: #4a235a;
+	font-size: 50px;
+	font-family: 'Fredericka the Great', cursive;
+	text-align: center;
+	color: white;
+	padding: 20px;
+}
+
+
+.nav {
+	width: 100%;
+	background-color: #5b2c6f;
+	overflow: hidden;
+	border-top: 1px solid #9b59b6;
+}
+
+.nav a {
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	float: left;
+	font-size: 22px;
+}
+
+.nav a:hover {
+	background-color: #d4e6f1;
+	color: black;
+}
+
+.dropbtn {
+    color: white;
+    background-color: #5b2c6f;
+	padding: 10px;
+	float: left;
+	font-size: 22px;
+	border: none;
+	cursor: pointer;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.dropbtn:hover {
+    background-color: #d4e6f1;
+	color: black;
+}
+
+.dropbtn1 {
+    color: white;
+    background-color: #5b2c6f;
+	padding: 10px;
+	float: left;
+	font-size: 22px;
+	border: none;
+	cursor: pointer;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.dropbtn1:hover {
+    background-color: #d4e6f1;
+	color: black;
+}
+
+.dropcontent {
+    display: none;
+    color: white;
+    padding: 5px 99px 8px 10px;
+    z-index: 5;
+    position: absolute;
+    top: 145px;
+    left: 318px;
+    background-color: #884ea0;
+}
+
+.dropcontent1 {
+    display: none;
+    color: white;
+    padding: 5px 99px 8px 10px;
+    z-index: 5;
+    position: absolute;
+    top: 145px;
+    left: 1156px;
+    background-color: #884ea0;
+}
+
+.dropp:hover {
+    cursor: pointer;
+    color: #d4e6f1;
+}
+
+.show {
+    display: block;
+}
+
+.card {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 5px 5px 10px gray;
+    width: 60%;
+    margin-top: 30px;
+    border: 1px solid gray;
+}
+
+.header {
+	background-color: #aed6f1;
+	padding: 20px;
+	color: black;
+	text-align: center;
+}
+
+.header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+input {
+	margin: 0;
+	border: none;
+	width: 75%;
+	padding: 10px;
+	float: left;
+	font-size: 20px;
+}
+
+/*Add button for tasks */
+.addtaskbtn {
+	padding: 12px;
+	width: 25%;
+	background-color: #512e5f;
+	color: white;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+}
+
+.addtaskbtn:hover {
+	background-color: #884ea0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	cursor: pointer;
+	position: relative;
+	padding: 12px 8px 12px 40px;
+	list-style-type: none;
+	font-size: 20px;
+	transition: 0.2s;
+	border-top: 1px solid black;
+	
+	
+	/* make the list items unselectable */
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+  transition: 0.3s;
+}
+
+.close:hover {
+  transform: scale(1.5);
+}
+
+.login {
+	background-color: white;
+    padding: 40px;
+    box-shadow: 5px 5px 10px gray;
+    width: 40%;
+    margin-top: 30px;
+	margin: auto;
+	border-radius: 5px;
+}
+
+.login input {
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 100%;
+}
+
+.loginbtn {
+	padding: 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: #512e5f;
+	color: white;
+	font-size: 20px;
+}
+
+.loginbtn:hover {
+	background-color: #aed6f1;
+	color: black;
+}

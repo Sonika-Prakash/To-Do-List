@@ -1,0 +1,123 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" href="css/style.css">
+<script src="js/dropbtn.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap" rel="stylesheet"> 
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div class="top">To - Do List</div>
+
+<div class="nav">
+	<a href="index.html" style="float: right;">Logout</a>
+	<a href="main.html" style="background-color: #d4e6f1; color: black;">My Day</a>
+	<a href="important.html">Important</a>
+	<a href="planned.html">Planned</a>
+	<button class="dropbtn" onclick="drop()">My Lists</button>
+    <div class="dropcontent" id="drop">
+        <p class="dropp">Personal</p>
+        <p class="dropp">College</p>
+    </div>
+    <button class="dropbtn1" style="float: right;" onclick="drop1()"><i class="fas fa-user"></i></button>
+    <div class="dropcontent1" id="drop1">
+        <p class="dropp">My Profile</p>
+        <p class="dropp">Your Account</p>
+        <p class="dropp">Settings</p>
+    </div>
+</div>
+
+<center>
+<div class="card">
+	<div class="header">
+		<img src="https://img.icons8.com/doodle/56/000000/sun--v1.png"/>
+		<h2 style="font-family: 'Nanum Gothic', sans-serif; margin-top: 0;">My Day</h2>
+		<input type="text" id="myTask" placeholder="Task">
+		<span onclick="newTask()" class="addtaskbtn">Add</span>
+	</div>
+	
+	<ul id="list">
+		<li>Hit the gym</li>
+		<li class="checked">Complete project</li>
+		<li>Attend class</li>
+		<li>Buy groceries</li>
+	</ul>
+</div>
+
+</center>
+
+<script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  span.style.fontSize = "24px";
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newTask() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myTask").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("list").appendChild(li);
+  }
+  document.getElementById("myTask").value = "";
+
+  var span = document.createElement("SPAN");
+  span.style.fontSize = "24px";
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+  
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+</script>
+
+</body>
+
+</html>
